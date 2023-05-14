@@ -1,2 +1,4 @@
 #!/bin/bash
+echo "Ac:"
+read 'Ze'
 echo "$input_string" | tr 'Ac' 'Ze'
