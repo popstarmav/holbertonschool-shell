@@ -1,2 +1,2 @@
 #!/bin/bash
---uniq -u -c
+read -p "Enter a list of words: " words
