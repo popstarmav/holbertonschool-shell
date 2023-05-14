@@ -1,4 +1,2 @@
 #!/bin/bash
-echo "Ac:"
-read 'Ze'
-echo "$input_string" | tr 'Ac' 'Ze'
+read -p "Enter the input string: " input_string; echo "$input_string" | tr 'A' 'Z' | tr 'c' 'e'
