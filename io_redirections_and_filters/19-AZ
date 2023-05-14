@@ -1,2 +1,2 @@
 #!/bin/bash
-read -p "Enter the input string: " input_string; echo "$input_string" | tr 'A' 'Z' | tr 'c' 'e'
+tr 'A' 'Z' | tr 'c' 'e'
