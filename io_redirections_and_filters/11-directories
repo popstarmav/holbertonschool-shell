@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f | wc -1
+du -a | sed '/.*\/.*\/.*/!d' | cut -d/ -f2 | sort | uniq -c
