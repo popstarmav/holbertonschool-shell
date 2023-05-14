@@ -1,2 +1,2 @@
 #!/bin/bash
-cat | grep ^foo | wc -l
+grep -c "pattern" filename
