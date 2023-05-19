@@ -1,0 +1,2 @@
+#!/bin/bash
+directories=$(echo "$PATH" | tr ':' '\n)
