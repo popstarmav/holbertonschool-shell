@@ -1,2 +1,2 @@
 #!/bin/bash
-PATH="$PATH:/action" | ls -A | wc -l
+echo $PATH | ls -A | wc -l
