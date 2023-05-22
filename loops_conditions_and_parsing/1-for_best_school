@@ -1,6 +1,6 @@
-#!/user/bin/env bash
-This script is displaying "Best School" 10 times
+#!/usr/bin/env bash
+# This script displays "Best School" 10 times using a for loop
 
 for ((i=1; i<=10; i++)); do
     echo "Best School"
-done#!/bin/bash
+done
