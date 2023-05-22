@@ -2,16 +2,14 @@
 # This script displays the time for 12 hours and 59 minutes
 
 hour=0
-minute=1
-count=0
 
-while [ $hour -lt 13 ] && [ $count -lt 70 ]; do
-    while [ $minute -lt 60 ] && [ $count -lt 70 ]; do
-        printf "%02d:%02d\n" $hour $minute
-        minute=$((minute + 1))
-        count=$((count + 1))
-    done
-    hour=$((hour + 1))
-    minute=1
+while [ $hour -le 12 ]; do
+  echo "Hour: $hour"
+  minute=1
+  while [ $minute -le 59 ]; do
+    echo "$minute"
+    (( minute++ ))
+  done
+  (( hour++ ))
 done
 
