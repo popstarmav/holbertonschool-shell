@@ -14,4 +14,3 @@ while [ $counter -le 10 ]; do
 
     counter=$((counter + 1))
 done
-
