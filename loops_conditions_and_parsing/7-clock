@@ -3,12 +3,15 @@
 
 hour=0
 minute=1
+count=0
 
-while [ $hour -lt 13 ]; do
-    while [ $minute -lt 60 ]; do
+while [ $hour -lt 13 ] && [ $count -lt 70 ]; do
+    while [ $minute -lt 60 ] && [ $count -lt 70 ]; do
         printf "%02d:%02d\n" $hour $minute
         minute=$((minute + 1))
+        count=$((count + 1))
     done
     hour=$((hour + 1))
-    minute=0
-done | head -n 70
+    minute=1
+done
+
