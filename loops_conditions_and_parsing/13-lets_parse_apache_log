@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 # This script extracts the visitor IP and HTTP status code from the Apache log file
 
-if [[ -z "$1" ]]; then
-  echo "Please provide the path to the Apache log file."
-  exit 1
-fi
-
-awk '{print $1, $9}' "$1"
+awk '{print $1, $9}' apache-access.log
 
