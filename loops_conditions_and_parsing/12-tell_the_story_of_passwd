@@ -8,4 +8,3 @@ while IFS=":" read -r username _ uid gid info home shell; do
     echo "More info about the user here: $info"
     echo
 done < /etc/passwd
-
