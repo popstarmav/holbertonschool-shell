@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# This script displays its own PID
+
+# Get the PID of the current script
+pid=$$
+
+# Display the PID
+if [[ -n $pid ]]; then
+    echo "The PID of this script is: $pid"
+else
+    echo "Failed to retrieve the PID."
+fi
+
