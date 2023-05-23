@@ -7,11 +7,18 @@
 # -o: Specify the format of the output
 # user: User who owns the process
 # pid: Process ID
-# ppid: Parent process ID
-# cmd: Command used to start the process
-processes=$(ps -eo user,pid,ppid,cmd --forest)
+# %CPU: CPU usage percentage
+# %MEM: Memory usage percentage
+# vsz: Virtual memory size in KB
+# rss: Resident set size (non-swapped physical memory) in KB
+# tty: Terminal associated with the process
+# stat: Process state
+# start: Start time or date of the process
+# time: CPU time consumed by the process
+# command: Command used to start the process
+processes=$(ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest)
 
-# Print the processes in a user-oriented format
-echo "USER   PID  PPID  COMMAND"
-echo "$processes" | awk '{printf "%-6s %5s %5s %s\n", $1, $2, $3, substr($0, index($0,$4))}'
+# Print the processes in the required format
+echo "USER       PID  %CPU  %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
+echo "$processes"
 
