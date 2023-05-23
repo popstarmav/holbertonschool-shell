@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This script displays its own PID
 
 # Get the PID of the current script
@@ -11,4 +10,3 @@ if [[ -n $pid ]]; then
 else
     echo "Failed to retrieve the PID."
 fi
-
