@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
+
 # This script displays a list of currently running processes,
 # including all users, without relying on TTY and showing process hierarchy.
 
-# Use ps command to retrieve the process information
+# Get the list of all processes using the ps command
 # -e: Display all processes
 # -o: Specify the format of the output
 # user: User who owns the process
 # pid: Process ID
 # ppid: Parent process ID
 # cmd: Command used to start the process
-ps -e -o user,pid,ppid,cmd --forest
+processes=$(ps -eo user,pid,ppid,cmd --forest)
+
+# Print the processes in a user-oriented format
+echo "USER   PID  PPID  COMMAND"
+echo "$processes" | awk '{printf "%-6s %5s %5s %s\n", $1, $2, $3, substr($0, index($0,$4))}'
 
