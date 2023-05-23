@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This script displays a list of currently running processes,
 # including all users, without relying on TTY and showing process hierarchy.
 
