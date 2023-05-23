@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 while IFS=: read -r username password userid groupid userinfo homedir shell; do
     echo "The user $username is part of the group $groupid gang, lives in $homedir and rides $shell."
     echo "User $userid's place is protected by the passcode $password."
