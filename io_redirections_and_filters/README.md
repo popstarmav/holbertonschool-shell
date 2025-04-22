@@ -73,7 +73,3 @@ Find all lines containing "root" in /etc/passwd:
 ```bash
 ./14-findthatword
 ```
-
-## Author
-
-[Your Name]
