@@ -1,39 +1,82 @@
-# Permissions in Holbertonschool-Shell
-This directory contains shell scripts designed to master Linux file and directory permissions, helping me automate user access control and understand ownership intricacies.
+# Shell Permissions
 
-![Running 9-John_Doe Script](link-to-image.png)
+This repository contains shell scripts that demonstrate and automate Linux file and directory permission management. These scripts cover fundamental operations for controlling access to files and directories in a Unix/Linux environment.
 
-## About Me
-I'm [Your Name], a software engineer passionate about systems programming and automation. These scripts reflect my journey in mastering Linux permissions. Connect with me on [LinkedIn](your-linkedin-url), follow my tech journey on [X](your-x-url), or explore my [Portfolio](portfolio-repo-url).
+## Table of Contents
 
-## Overview
-The `permissions` directory features scripts that automate Linux permission management, from changing file ownership (`3-new_owner`) to setting symbolic link permissions (`15-symbolic_link_permissions`). These scripts helped me grasp `chmod`, `chown`, and `chgrp` commands.
+- [Description](#description)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Key Concepts](#key-concepts)
+- [Examples](#examples)
 
-## My Development Journey
-Writing `10-mirror_permissions` was eye-opening—I had to mirror permissions between files, which deepened my understanding of `stat` and `chmod`. The trickiest part was `16-if_only`, where I learned to apply conditional permission changes based on the owner.
+## Description
 
-## Features
-**Implemented:**
-- `0-iam_betty`: Switches the current user to `betty`.
-- `9-John_Doe`: Sets specific permissions (rwxr-x-wx) for a file.
-- `11-directories_permissions`: Adds execute permissions to all subdirectories.
-- `15-symbolic_link_permissions`: Changes permissions for symbolic links.
+This project focuses on understanding and working with Linux permissions, covering:
+- User and group ownership management
+- Permission settings for files and directories
+- Special permissions and modes
+- Symbolic links permissions
+- Conditional permission changes
 
-**Future Goals:**
-- Add a script to audit permissions across a directory tree.
-- Implement permission rollback functionality for testing.
+Each script demonstrates specific aspects of permission management, from basic operations like changing owners to more complex scenarios like mirroring permissions between files.
 
-## Key Challenges
-- **Symbolic Links**: In `15-symbolic_link_permissions`, I struggled with how symbolic links inherit permissions, but `chmod -h` cleared things up.
-- **Conditional Logic**: Writing `16-if_only` required precise `if` conditions to check ownership before changing permissions.
+## Requirements
 
-## Getting Started
-1. Navigate: `cd permissions`
-2. Make executable: `chmod +x 9-John_Doe`
-3. Run: `bash 9-John_Doe`
-4. Verify: `ls -l` to see the changes.
+- All scripts are designed to be run on Ubuntu 20.04 LTS
+- All scripts are executable (`chmod +x script_name`)
+- All scripts pass shellcheck without any errors
+- The first line of all scripts is `#!/bin/bash`
 
-> “Permissions are the gatekeepers of a system—set them wisely.”
+## Usage
 
--rwxr-xr-x  [file]
-drwxr-xr-x  [dir]
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/holbertonschool-shell.git
+```
+
+2. Navigate to the directory:
+```bash
+cd holbertonschool-shell/permissions
+```
+
+3. Make the scripts executable (if they aren't already):
+```bash
+chmod +x *
+```
+
+4. Run any script:
+```bash
+./script_name
+```
+
+## Key Concepts
+
+- **File Ownership**: Managing which users and groups own files
+- **Permission Modes**: Setting read, write, and execute permissions
+- **Symbolic Notation**: Using letters (rwx) to represent permissions
+- **Numeric Notation**: Using octal numbers (e.g., 755) to set permissions
+- **Special Permissions**: Understanding setuid, setgid, and sticky bit
+- **Directory Permissions**: How permissions affect directory access
+
+## Examples
+
+Switch to another user:
+```bash
+./0-iam_betty
+```
+
+Set specific permissions for a file:
+```bash
+./9-John_Doe
+```
+
+Add execute permission to all subdirectories:
+```bash
+./11-directories_permissions
+```
+
+Change permissions for symbolic links:
+```bash
+./15-symbolic_link_permissions
+```
