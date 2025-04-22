@@ -1,40 +1,78 @@
-# Processes and Signals in Holbertonschool-Shell
-This directory houses shell scripts that dive into Linux process management and signal handling, helping me understand how to monitor, control, and manipulate processes effectively.
+# Processes and Signals
 
-![Running 7-highlander Script](link-to-image.png)
+This repository contains shell scripts that explore Linux process management and signal handling concepts. These scripts demonstrate fundamental techniques for monitoring, controlling, and manipulating processes in a Unix/Linux environment.
 
-## About Me
-I'm [Your Name], a software engineer passionate about mastering low-level systems programming. I built these scripts to deepen my Linux expertise. Connect with me on [LinkedIn](your-linkedin-url), follow my coding journey on [X](your-x-url), or check out my [Portfolio](portfolio-repo-url).
+## Table of Contents
 
-## Overview
-The `processes_and_signals` directory contains scripts that explore Linux process management and signal handling. From displaying process IDs (`0-what-is-my-pid`) to creating immortal processes (`7-highlander`), these scripts tackle real-world system administration challenges.
+- [Description](#description)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Key Concepts](#key-concepts)
+- [Examples](#examples)
 
-## My Development Journey
-Working on `7-highlander` was a game-changer—I had to figure out how to make a process resist termination signals, which led me down a rabbit hole of `trap` commands. I also struggled with `6-stop_me_if_you_can`, where I learned the nuances of cross-process signaling.
+## Description
 
-## Features
-**Implemented:**
-- `0-what-is-my-pid`: Displays the current script’s process ID.
-- `4-to_infinity_and_beyond`: Runs an infinite loop to simulate a persistent process.
-- `7-highlander`: Creates a process that resists termination.
-- `11-manage_my_process`: Manages a background process with start/stop functionality.
+This project focuses on understanding and working with processes and signals in Linux, covering:
+- Process identification and listing
+- Process monitoring and management
+- Signal handling and trapping
+- Background processes and daemons
+- Process control techniques
 
-**Future Goals:**
-- Add signal logging for caught signals.
-- Enhance `manage_my_process` with status monitoring.
+Each script demonstrates specific aspects of process management, from basic operations like displaying PIDs to more complex scenarios like creating resilient processes that handle signals.
 
-## Key Challenges
-- **Signal Trapping**: Trapping SIGTERM in `7-highlander` was tricky until I mastered `trap` syntax.
-- **Process Communication**: Sending signals in `6-stop_me_if_you_can` taught me how to use `kill` effectively.
+## Requirements
 
-## Getting Started
-1. Navigate: `cd processes_and_signals`
-2. Make executable: `chmod +x 7-highlander`
-3. Run: `bash 7-highlander`
-4. Test signals: `kill -SIGTERM <pid>`
+- All scripts are designed to be run on Ubuntu 20.04 LTS
+- All scripts are executable (`chmod +x script_name`)
+- All scripts pass shellcheck without any errors
+- The first line of all scripts is `#!/bin/bash`
 
-> “Processes are the heartbeat of a system—signals keep them in rhythm.”
+## Usage
 
-[PID 1234]
-  ├── [PID 1235]
-  └── [PID 1236]
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/holbertonschool-shell.git
+```
+
+2. Navigate to the directory:
+```bash
+cd holbertonschool-shell/processes_and_signals
+```
+
+3. Make the scripts executable:
+```bash
+chmod +x *.sh
+```
+
+4. Run any script:
+```bash
+./script_name
+```
+
+## Key Concepts
+
+- **Process ID (PID)**: Unique identifier for running processes
+- **Signals**: Software interrupts sent to processes
+- **Trapping**: Capturing and handling signals in scripts
+- **Background Processes**: Processes that run without being connected to the terminal
+- **Process Management**: Starting, stopping, and monitoring processes
+
+## Examples
+
+Display your script's PID:
+```bash
+./0-what-is-my-pid
+```
+
+Create an "immortal" process that resists termination:
+```bash
+./7-highlander
+```
+
+Manage a background process:
+```bash
+./11-manage_my_process start
+./11-manage_my_process stop
+./11-manage_my_process restart
+```
